@@ -9,7 +9,7 @@
  */
 package Aufgabe_1;
 
-public interface PufferInterface {
+public interface Puffer {
 
 	/**
 	 * Maximale Puffer-Groesse.

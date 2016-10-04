@@ -5,7 +5,7 @@
  */
 package Aufgabe_1;
 
-public abstract class PufferAbstract implements PufferInterface {
+public abstract class PufferAbstract implements Puffer {
 	
 	/**
 	 * Maximale Puffer groesse
