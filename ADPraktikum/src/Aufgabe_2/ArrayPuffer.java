@@ -21,9 +21,9 @@ public class ArrayPuffer extends PufferAbstract {
 
 	@Override
 	protected boolean private_push(String value) {
-		size++;
-		if (size > maxSize)
+		if (size + 1 > maxSize)
 			return false;
+		size++;
 		indexLast--;
 		if (indexLast < 0)
 			indexLast += maxSize;
@@ -66,9 +66,7 @@ public class ArrayPuffer extends PufferAbstract {
 
 	@Override
 	protected boolean private_isEmpty() {
-		if (size == 0)
-			return true;
-		return false;
+		return size == 0 ? true : false;
 	}
 
 }
