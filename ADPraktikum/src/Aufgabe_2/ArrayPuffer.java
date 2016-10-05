@@ -53,7 +53,7 @@ public class ArrayPuffer extends PufferAbstract {
 	@Override
 	protected boolean private_contains(String value) {
 		for (int i = 0; i < size; i++) {
-			if (puffer[indexFirst + i > maxSize - 1 ? indexFirst + i - maxSize : indexFirst + i] == value)
+			if (puffer[indexFirst + i > maxSize - 1 ? indexFirst + i - maxSize : indexFirst + i].equals(value))
 				return true;
 		}
 		return false;

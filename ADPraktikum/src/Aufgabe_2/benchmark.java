@@ -7,7 +7,7 @@ import Aufgabe_1.Puffer;
 public class benchmark {
 
 	public static void main(String[] args) {
-		int maxPufferSize = 1000000;
+		int maxPufferSize = 100000;
 		Puffer testPuffer;
 
 		testPuffer = new ArrayPuffer(maxPufferSize);
@@ -21,9 +21,14 @@ public class benchmark {
 	private static void benchmarkPuffer(Puffer puffer, int maxPufferSize) {
 		long start = System.nanoTime();
 
-		for (int j = 0; j < 20; j++) {
+		for (int j = 0; j < 1; j++) {
 			for (int i = 0; i < maxPufferSize; i++)
 				puffer.push("" + i);
+			
+			for (int i = 0; i < maxPufferSize; i++)
+				if (!puffer.contains("" + i))
+					System.out.println("Fehler!");
+			
 			// String val;
 			for (int i = 0; i < maxPufferSize; i++) {
 				puffer.pop();

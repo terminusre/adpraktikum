@@ -53,7 +53,7 @@ public class LinkedListPuffer extends PufferAbstract {
 	protected boolean private_contains(String value) {
 		ConsZelle cursor = head.next;
 		for (int i = 0; i < size; i++) {
-			if (cursor.getValue() == value)
+			if (cursor.getValue().equals(value))
 				return true;
 			cursor = cursor.next;
 		}
