@@ -6,11 +6,10 @@ public class LinkedListPuffer extends PufferAbstract {
 	private int maxSize;
 	private int size = 0;
 	private ConsZelle head = new ConsZelle(null, null, null);
-	private ConsZelle tail = new ConsZelle("test", head, head);
 
 	{
-		head.next = tail;
-		head.prev = tail;
+		head.next = head;
+		head.prev = head;
 	}
 
 	public LinkedListPuffer() {
@@ -27,8 +26,8 @@ public class LinkedListPuffer extends PufferAbstract {
 		if (size + 1 > maxSize)
 			return false;
 		size++;
-		tail.next.prev = new ConsZelle(value, tail.next, tail);
-		tail.next = tail.next.prev;
+		head.next.prev = new ConsZelle(value, head.next, head);
+		head.next = head.next.prev;
 		return true;
 	}
 
@@ -52,7 +51,7 @@ public class LinkedListPuffer extends PufferAbstract {
 
 	@Override
 	protected boolean private_contains(String value) {
-		ConsZelle cursor = tail.next;
+		ConsZelle cursor = head.next;
 		for (int i = 0; i < size; i++) {
 			if (cursor.getValue() == value)
 				return true;

@@ -4,8 +4,8 @@ import Aufgabe_1.PufferAbstract;
 
 public class ArrayPuffer extends PufferAbstract {
 	private String[] puffer;
-	private int indexFirst = 0;
-	private int indexLast = 1;
+	private int indexFirst = 1;
+	private int indexLast = 0;
 	private int size = 0;
 	private int maxSize;
 
@@ -24,9 +24,9 @@ public class ArrayPuffer extends PufferAbstract {
 		if (size + 1 > maxSize)
 			return false;
 		size++;
-		indexLast--;
-		if (indexLast < 0)
-			indexLast += maxSize;
+		indexLast++;
+		if (indexLast > maxSize - 1)
+			indexLast -= maxSize;
 		puffer[indexLast] = value;
 		return true;
 	}
@@ -36,9 +36,9 @@ public class ArrayPuffer extends PufferAbstract {
 		if (isEmpty())
 			return null;
 		String val = puffer[indexFirst];
-		indexFirst--;
-		if (indexFirst < 0)
-			indexFirst += maxSize;
+		indexFirst++;
+		if (indexFirst > maxSize - 1)
+			indexFirst -= maxSize;
 		size--;
 		return val;
 	}
@@ -53,7 +53,7 @@ public class ArrayPuffer extends PufferAbstract {
 	@Override
 	protected boolean private_contains(String value) {
 		for (int i = 0; i < size; i++) {
-			if (puffer[indexLast + i > maxSize - 1 ? indexLast + i - maxSize : indexLast + i] == value)
+			if (puffer[indexFirst + i > maxSize - 1 ? indexFirst + i - maxSize : indexFirst + i] == value)
 				return true;
 		}
 		return false;

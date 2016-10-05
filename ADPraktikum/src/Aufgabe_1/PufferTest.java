@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import Aufgabe_2.LinkedListPuffer;
+import Aufgabe_2.ArrayPuffer;
 /**
  * 
  * @author Patrick & Jeffrey
@@ -13,7 +13,7 @@ import Aufgabe_2.LinkedListPuffer;
  */
 public class PufferTest {
 	
-	Puffer puffer = new LinkedListPuffer();
+	Puffer puffer = new ArrayPuffer();
 	private static String TEST_PUFFER_1 = "TEST_1";
 	private static String TEST_PUFFER_2 = "TEST_2";
 	private static String TEST_PUFFER_3 = "TEST_3";
