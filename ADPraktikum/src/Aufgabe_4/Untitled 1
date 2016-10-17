@@ -1,0 +1,11 @@
+Das erkannte Schema ist (3^(n + 1)) - 1.
+
+Induktionsanfang
+n = 0
+	(3^(n + 1)) - 1 = 3 - 1 = 2.
+	
+Induktionsbehauptung
+Die Formel bildet die Zahlenreihe fuer alle n ab.
+
+Induktionsschritt
+(3^(n + 2)) - 1 = ((3^(n + 1)) * 3) - 1
